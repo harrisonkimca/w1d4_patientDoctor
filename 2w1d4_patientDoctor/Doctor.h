@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class Patient;
+
 @interface Doctor : NSObject
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *specialization;
+@property (strong, nonatomic) NSMutableArray *acceptPatients;
+
+- (instancetype)initWithName:(NSString*)doctorName andSpecialization:(NSString*)doctorSpecialty;
+- (BOOL)acceptPatient:(Patient*)patient;
+- (BOOL)requestMedication:(Patient*)patient;
+- (NSMutableDictionary*)givePrescription:(Patient*)patient;
 
 @end

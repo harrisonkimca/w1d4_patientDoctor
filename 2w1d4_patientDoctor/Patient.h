@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class Doctor;
+
 @interface Patient : NSObject
+
+@property (strong, nonatomic) NSString *name;
+@property (nonatomic) int age;
+@property (nonatomic) int healthCard;
+@property (strong, nonatomic) NSMutableSet *symptoms;
+
+- (instancetype) initWithName:(NSString*)patientName andAge:(int)patientAge andHealthCare:(int)healthCard andSymptoms:(NSMutableSet*)patientSymptoms;
+- (void) visitDoctor:(Doctor*)doctor;
 
 @end
